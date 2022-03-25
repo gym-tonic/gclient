@@ -24,7 +24,6 @@ public class GClientRunner implements CommandLineRunner {
     @Override
     public void run(String... args) {
         LOG.info("gClient starts up...");
-        System.out.println("gClient, a Graylog client!");
         Scanner scanner = new Scanner(System.in);
         String nextCommand;
         boolean shouldQuit = false;

@@ -20,8 +20,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
 public class GClientLoadTest extends GClientTest {
-
-    @Autowired
     @InjectMocks
     GClientLoad victim;
 
@@ -31,9 +29,12 @@ public class GClientLoadTest extends GClientTest {
     @Mock
     GelfSender gelfSender;
 
+    @Mock
+    GClientUnknown nextCommand;
+
     @Before
     public void setup() {
-        MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
@@ -65,7 +66,7 @@ public class GClientLoadTest extends GClientTest {
 
     @Test
     public void getNextTest() {
-        assertEquals(true, victim.getNext() instanceof GClientLoad);
+        assertEquals(nextCommand, victim.getNext());
     }
 
     @Test

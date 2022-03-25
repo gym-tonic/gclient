@@ -27,7 +27,7 @@ public class GClientHelp implements GClientCommand {
     @Override
     public ExecutionResult execute(String commandInStringFormat) {
         LOG.info(String.format("was executed for '%s'", commandInStringFormat));
-        System.out.println("$ The only command implemented is: 1) load <pathToTextFileWithGraylogMessages> and 2) exit");
+        System.out.println("$ The only implemented commands are: 1) load <pathToTextFileWithGraylogMessages> and 2) exit");
         return new ExecutionResult();
     }
 
